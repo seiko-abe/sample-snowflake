@@ -1,6 +1,6 @@
 connection: "niigata_open_data_donut"
-
-include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
+label: "新潟オープンデータ"
+include: "/**/*.view" # include all the views
 # include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
@@ -13,6 +13,18 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 #     sql_on: ${orders.id} = ${order_items.order_id} ;;
 #   }
 #
+#   join: users {
+#     relationship: many_to_one
+#     sql_on: ${users.id} = ${orders.user_id} ;;
+#   }
+# }
+explore: city_master {
+  join: events {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${city_master.city_code} = ${events.city_code} ;;
+  }
+  }
 #   join: users {
 #     relationship: many_to_one
 #     sql_on: ${users.id} = ${orders.user_id} ;;
