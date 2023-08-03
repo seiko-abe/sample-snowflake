@@ -17,7 +17,7 @@ explore: replication_databases {
 explore: city_master {
   join: events {
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_one
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: designated_emergency_evacuation_sites {
