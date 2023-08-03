@@ -17,47 +17,47 @@ explore: replication_databases {
 explore: city_master {
   join: events {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: designated_emergency_evacuation_sites {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: child_care_facilities {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: cultural_assets {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: firewater_facilities {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: medical_institutions {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: nursing_care_service_offices {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: population_by_region_and_age {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: public_facilities {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: public_toilets {
@@ -67,12 +67,12 @@ explore: city_master {
   }
   join: public_wireless_lan_access_points {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
   join: tourist_facilities {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
 }
