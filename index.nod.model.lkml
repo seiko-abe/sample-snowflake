@@ -22,14 +22,14 @@ include: "/**/*.view" # include all the views.
 explore: replication_databases {
   join: replication_groups {
     type: left_outer
-    relationship: many_to_many
+    relationship: many_to_one
     sql_on: ${replication_databases.account_name} = ${account_name} ;;
 }
 }
 explore: city_master {
   join: events {
     type: left_outer
-    relationship: many_to_many
+    relationship: many_to_one
     sql_on: ${city_master.city_code} = ${events.city_code} ;;
   }
 }
