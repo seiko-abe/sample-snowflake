@@ -29,7 +29,7 @@ explore: replication_databases {
 explore: city_master {
   join: events {
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     sql_on: ${city_master.city_code} = ${events.city_code} ;;
   }
 }
