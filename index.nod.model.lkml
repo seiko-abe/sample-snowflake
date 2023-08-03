@@ -1,6 +1,6 @@
 connection: "niigata_open_data_donut"
 label: "新潟オープンデータ"
-include: "/**/*.view" # include all the views.
+include: "/views/**/*.view.lkml" # include all the views.
 
 # include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
@@ -29,7 +29,7 @@ explore: replication_databases {
 explore: city_master {
   join: events {
     type: left_outer
-    relationship: one_to_many
+    relationship: many_to_one
     sql_on: ${city_master.city_code} = ${events.city_code} ;;
   }
 }
