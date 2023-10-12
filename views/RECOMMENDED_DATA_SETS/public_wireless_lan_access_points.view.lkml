@@ -36,7 +36,7 @@ view: public_wireless_lan_access_points {
     type: string
     sql: ${TABLE}."CITY_NAME"
     sql_case: {
-      when: {
+      when {
         sql: `${TABLE}."CITY_NAME" IS NOT NULL`
         label: "Not NULL City Name"
       }
