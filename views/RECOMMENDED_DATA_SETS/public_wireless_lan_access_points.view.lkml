@@ -117,8 +117,8 @@ view: public_wireless_lan_access_points {
     sql: ${TABLE}."CITY_NAME";;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [city_name, pref_name, building_name]
-  }
+  # measure: count {
+  #   type: count
+  #   drill_fields: [city_name, pref_name, building_name]
+  # }
 }
