@@ -110,11 +110,13 @@ view: public_wireless_lan_access_points {
     type: string
     sql: ${TABLE}."URL" ;;
   }
+
   measure: city_total {
-    type: sum
+    type: count
     label: "合計"
     sql: ${TABLE}."CITY_NAME";;
   }
+
   measure: count {
     type: count
     drill_fields: [city_name, pref_name, building_name]
