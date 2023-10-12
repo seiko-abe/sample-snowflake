@@ -14,6 +14,7 @@ include: "/views/**/*.view.lkml" # include all the views.
 #     sql_on: ${replication_databases.account_name} = ${account_name} ;;
 # }
 # }
+
 explore: city_master {
   join: events {
     type: left_outer
