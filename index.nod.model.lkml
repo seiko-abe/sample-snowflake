@@ -20,6 +20,7 @@ explore: city_master {
     relationship: many_to_one
     sql_on: ${city_master.city_code} = ${city_code} ;;
   }
+
   join: designated_emergency_evacuation_sites {
     type: left_outer
     relationship: many_to_one
