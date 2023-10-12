@@ -34,8 +34,14 @@ view: public_wireless_lan_access_points {
 
   dimension: city_name {
     type: string
-    sql: ${TABLE}."CITY_NAME" ;;
-  }
+    sql: ${TABLE}."CITY_NAME"
+    sql_case: {
+      when: {
+        sql: `${TABLE}."CITY_NAME" IS NOT NULL`
+        label: "Not NULL City Name"
+      }
+}
+}
 
   dimension: ext_number {
     type: string
@@ -112,13 +118,13 @@ view: public_wireless_lan_access_points {
   }
 
   measure: city_total {
-    type: count
+    type: sum
     label: "合計"
     sql: ${TABLE}."CITY_NAME";;
   }
 
-  # measure: count {
-  #   type: count
-  #   drill_fields: [city_name, pref_name, building_name]
-  # }
+  measure: count {
+    type: count
+    drill_fields: [city_name, pref_name, building_name]
+  }
 }
