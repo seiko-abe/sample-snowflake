@@ -34,8 +34,11 @@ view: public_wireless_lan_access_points {
 
   dimension: city_name {
     type: string
-    sql: ${TABLE}."CITY_NAME" ;;
-  }
+    sql: ${TABLE}."CITY_NAME"
+    sql_case: when_field_value
+      when: "IS NOT NULL"
+      label: "Not NULL City Name";;
+    }
 
   dimension: ext_number {
     type: string
@@ -69,7 +72,10 @@ view: public_wireless_lan_access_points {
 
   dimension: pref_name {
     type: string
-    sql: ${TABLE}."PREF_NAME" ;;
+    sql: ${TABLE}."PREF_NAME"
+    sql_case: when_field_value {
+    when: "IS NOT NULL"
+    label: "Not NULL Pref Name";;
   }
 
   dimension: remark {
